@@ -1,0 +1,70 @@
+// Scrollbar
+::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+}
+::-webkit-scrollbar-track {
+    background-color: #cbcbcb;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #616161;
+}
+
+
+// AppInstructors.jsx
+.App-Instructors {
+	th, td {
+		border: 1px solid #ccc;
+        padding: 10px;
+        
+	}
+}
+
+
+// Navbar.jsx
+.main-navbar {
+    .nav-link.active {
+        color: rgb(21, 137, 195);
+        font-weight: 600;
+    }
+}
+
+
+// Dashboard.jsx
+.Dashboard-Page {
+  .choices {
+    .row {
+      div {
+        height: 200px
+      }
+    }
+  }
+    label {
+        color: #616161;
+        &+ span b {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+        }
+    }
+}
+
+
+// Edit Page
+.Edit-Page {
+  .container {
+    a {
+      width: fit-content;
+    }
+  }
+}
+
+
+// Footer.jsx
+.Main-Footer {
+  a:hover {
+    color: rgb(40, 104, 207) !important;
+  }
+}
