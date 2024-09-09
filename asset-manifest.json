@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/crud-web-app-using-reactjs-bootstrap-scss/static/css/main.1fb217ba.css",
-    "main.js": "/crud-web-app-using-reactjs-bootstrap-scss/static/js/main.f70ecd6d.js",
+    "main.css": "/crud-web-app-using-reactjs-bootstrap-scss/static/css/main.9236a70f.css",
+    "main.js": "/crud-web-app-using-reactjs-bootstrap-scss/static/js/main.be5cb335.js",
     "index.html": "/crud-web-app-using-reactjs-bootstrap-scss/index.html",
-    "main.1fb217ba.css.map": "/crud-web-app-using-reactjs-bootstrap-scss/static/css/main.1fb217ba.css.map",
-    "main.f70ecd6d.js.map": "/crud-web-app-using-reactjs-bootstrap-scss/static/js/main.f70ecd6d.js.map"
+    "main.9236a70f.css.map": "/crud-web-app-using-reactjs-bootstrap-scss/static/css/main.9236a70f.css.map",
+    "main.be5cb335.js.map": "/crud-web-app-using-reactjs-bootstrap-scss/static/js/main.be5cb335.js.map"
   },
   "entrypoints": [
-    "static/css/main.1fb217ba.css",
-    "static/js/main.f70ecd6d.js"
+    "static/css/main.9236a70f.css",
+    "static/js/main.be5cb335.js"
   ]
 }
