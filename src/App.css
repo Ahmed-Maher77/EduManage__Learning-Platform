@@ -43,3 +43,11 @@
 .Main-Footer a:hover {
   color: rgb(40, 104, 207) !important;
 }/*# sourceMappingURL=App.css.map */
+
+
+.full-h {
+  min-height: calc(100vh - (62px + 80px + 24px)) !important
+}
+.full-m-h {
+  min-height: calc(100vh - (62px + 80px)) !important
+}

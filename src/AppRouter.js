@@ -153,7 +153,7 @@ class AppRouter extends React.Component {
 
 	render() {
 		return (
-			<div className="AppRouter">
+			<div className="AppRouter" style={{minHeight: "100svh"}}>
 				<Navbar />
 
 				{/* Route for instructors page with delete and edit item functionality */}

@@ -26,7 +26,7 @@ const EditItem = () => {
 
 
 	return (
-		<div className="Edit-Page py-5">
+		<div className="Edit-Page py-5 full-m-h">
 			<div className="container">
 				<h2 className="text-center mb-4">Edit {dataType} Data</h2>
 				{!editedItem? <h2>Loading...</h2> : 

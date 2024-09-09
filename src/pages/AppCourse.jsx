@@ -5,7 +5,7 @@ class AppCourse extends React.Component {
 	render() {
 		// Courses Data Table Component
 		return (
-			<div className="table-responsive container-fluid container-xl pt-4 text-center mb-4">
+			<div className="table-responsive container-fluid container-xl pt-4 text-center mb-4 full-h">
 				{/* Courses Data Header */}
 				<h3 className="my-3">Courses Data</h3>
 

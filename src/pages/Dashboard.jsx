@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
 
 	render() {
 		return (
-			<div className="Dashboard-Page py-5  mt-4 position-relative">
+			<div className="Dashboard-Page py-5  mt-4 position-relative full-h">
 				<div className="container">
 					{this.state.notChoosed ? (
 						// Display choice buttons when no choice has been made
