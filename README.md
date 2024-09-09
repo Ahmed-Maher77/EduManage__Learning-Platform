@@ -30,7 +30,7 @@ To download and run this project locally:
 2. Clone the repository: <br/>
 => git clone https://github.com/yourusername/CRUD-Dashboard-Web-App.git <br/>
 => cd CRUD-Dashboard-Web-App
-4. Install dependencies:  <br/>
+4. Install dependencies: <br/>
 => npm install
 5. Run the application: For development mode:  <br/>
 => npm start
