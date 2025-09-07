@@ -74,7 +74,9 @@ class InstructorForm extends React.Component {
 				this.setState({ userCourseList: value });
 				// Validates comma-separated course names
 				if (
-					/^([a-zA-Z0-9\s-]{1,500})(,\s*[a-zA-Z0-9\s-]{1,50})*$/.test(value)
+					/^([a-zA-Z0-9\s-]{1,500})(,\s*[a-zA-Z0-9\s-]{1,50})*$/.test(
+						value
+					)
 				) {
 					this.setState({ courseError: false });
 				} else {
@@ -180,12 +182,16 @@ class InstructorForm extends React.Component {
 						id="name"
 						placeholder="name"
 						value={userName}
-						onChange={(e) => this.checkInput("userName", e.target.value)}
+						onChange={(e) =>
+							this.checkInput("userName", e.target.value)
+						}
 					/>
 					<label htmlFor="name">Enter Name</label>
 					{nameError && (
 						<span className="text-danger ps-1">
-							<b className="mt-2 bg-danger text-white d-inline-block">!</b>{" "}
+							<b className="mt-2 bg-danger text-white d-inline-block">
+								!
+							</b>{" "}
 							Invalid username
 						</span>
 					)}
@@ -198,12 +204,16 @@ class InstructorForm extends React.Component {
 						id="email"
 						placeholder="name@example.com"
 						value={userEmail}
-						onChange={(e) => this.checkInput("userEmail", e.target.value)}
+						onChange={(e) =>
+							this.checkInput("userEmail", e.target.value)
+						}
 					/>
 					<label htmlFor="email">Enter Email</label>
 					{emailError && (
 						<span className="text-danger ps-1">
-							<b className="mt-2 bg-danger text-white d-inline-block">!</b>{" "}
+							<b className="mt-2 bg-danger text-white d-inline-block">
+								!
+							</b>{" "}
 							Invalid email
 						</span>
 					)}
@@ -216,12 +226,16 @@ class InstructorForm extends React.Component {
 						id="address"
 						placeholder="address"
 						value={userAddress}
-						onChange={(e) => this.checkInput("userAddress", e.target.value)}
+						onChange={(e) =>
+							this.checkInput("userAddress", e.target.value)
+						}
 					/>
 					<label htmlFor="address">Enter Physical Address</label>
 					{addressError && (
 						<span className="text-danger ps-1">
-							<b className="mt-2 bg-danger text-white d-inline-block">!</b>{" "}
+							<b className="mt-2 bg-danger text-white d-inline-block">
+								!
+							</b>{" "}
 							Invalid address
 						</span>
 					)}
@@ -234,12 +248,16 @@ class InstructorForm extends React.Component {
 						id="track"
 						placeholder="track"
 						value={userTrack}
-						onChange={(e) => this.checkInput("userTrack", e.target.value)}
+						onChange={(e) =>
+							this.checkInput("userTrack", e.target.value)
+						}
 					/>
 					<label htmlFor="track">Enter Track</label>
 					{trackError && (
 						<span className="text-danger ps-1">
-							<b className="mt-2 bg-danger text-white d-inline-block">!</b>{" "}
+							<b className="mt-2 bg-danger text-white d-inline-block">
+								!
+							</b>{" "}
 							Invalid track name
 						</span>
 					)}
@@ -252,14 +270,18 @@ class InstructorForm extends React.Component {
 						id="courseList"
 						placeholder="courseList"
 						value={userCourseList}
-						onChange={(e) => this.checkInput("userCourseList", e.target.value)}
+						onChange={(e) =>
+							this.checkInput("userCourseList", e.target.value)
+						}
 					/>
 					<label htmlFor="courseList">
 						Enter Course List [ex: html, css, ..]
 					</label>
 					{courseError && (
 						<span className="text-danger ps-1">
-							<b className="mt-2 bg-danger text-white d-inline-block">!</b>{" "}
+							<b className="mt-2 bg-danger text-white d-inline-block">
+								!
+							</b>{" "}
 							Invalid list structure
 						</span>
 					)}
@@ -275,7 +297,23 @@ class InstructorForm extends React.Component {
 					className="btn btn-outline-success d-block m-auto p-2 px-3 mt-5"
 					onClick={() => this.handleForm()}
 				>
-					Add new Course
+					<svg
+						width="16"
+						height="16"
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						className="me-2"
+					>
+						<path
+							d="M12 5V19M5 12H19"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						/>
+					</svg>
+					Add New Instructor
 				</button>
 				{/* Success message */}
 				{this.state.addedSuccessfully && this.showAddedMsg()}

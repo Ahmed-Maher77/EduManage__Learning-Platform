@@ -17,7 +17,7 @@ class CourseForm extends React.Component {
 			coursTypeError: false,
 			courseTopicsError: false,
 			courseTrackError: false,
-            // Form submission states
+			// Form submission states
 			addedSuccessfully: false,
 			notValideForm: false,
 		};
@@ -27,35 +27,62 @@ class CourseForm extends React.Component {
 	checkInput = (stateName, value) => {
 		switch (stateName) {
 			case "courseName":
-                this.setState({ courseName: value, courseNameError: !/^[a-zA-Z0-9\s,.'-]{5,100}$/.test(value) });
-                break;
-            case "courseDuration":
-                this.setState({ courseDuration: value, courseDurationError: !/^[a-zA-Z0-9\s,.'-]{3,100}$/.test(value) });
-                break;
-            case "courseTopics":
-                this.setState({ courseTopics: value, courseTopicsError: !/^([a-zA-Z0-9\s-]{1,500})(,\s*[a-zA-Z0-9\s-]{1,100})*$/.test(value) });
-                break;
-            case "coursType":
-                this.setState({ coursType: value, coursTypeError: !/^(online|offline)$/i.test(value) });
-                break;
-            case "courseTrack":
-                this.setState({ courseTrack: value, courseTrackError: !/^[a-zA-Z0-9\s-]{1,100}$/.test(value) });
-                break;
-            default:
-                break;
+				this.setState({
+					courseName: value,
+					courseNameError: !/^[a-zA-Z0-9\s,.'-]{5,100}$/.test(value),
+				});
+				break;
+			case "courseDuration":
+				this.setState({
+					courseDuration: value,
+					courseDurationError: !/^[a-zA-Z0-9\s,.'-]{3,100}$/.test(
+						value
+					),
+				});
+				break;
+			case "courseTopics":
+				this.setState({
+					courseTopics: value,
+					courseTopicsError:
+						!/^([a-zA-Z0-9\s-]{1,500})(,\s*[a-zA-Z0-9\s-]{1,100})*$/.test(
+							value
+						),
+				});
+				break;
+			case "coursType":
+				this.setState({
+					coursType: value,
+					coursTypeError: !/^(online|offline)$/i.test(value),
+				});
+				break;
+			case "courseTrack":
+				this.setState({
+					courseTrack: value,
+					courseTrackError: !/^[a-zA-Z0-9\s-]{1,100}$/.test(value),
+				});
+				break;
+			default:
+				break;
 		}
 	};
 
 	// Handle form submission
 	handleForm = () => {
-		const { courseName, courseDuration, courseTopics, coursType, courseTrack } =
-			this.state;
-		const isValidName = !this.state.courseNameError && courseName.trim() !== "";
+		const {
+			courseName,
+			courseDuration,
+			courseTopics,
+			coursType,
+			courseTrack,
+		} = this.state;
+		const isValidName =
+			!this.state.courseNameError && courseName.trim() !== "";
 		const isValidDuration =
 			!this.state.courseDurationError && courseDuration.trim() !== "";
 		const isValidTopics =
 			!this.state.courseTopicsError && courseTopics.trim() !== "";
-		const isValidType = !this.state.coursTypeError && coursType.trim() !== "";
+		const isValidType =
+			!this.state.coursTypeError && coursType.trim() !== "";
 		const isValidTrack =
 			!this.state.courseTrackError && courseTrack.trim() !== "";
 
@@ -66,16 +93,18 @@ class CourseForm extends React.Component {
 			isValidTrack &&
 			isValidType
 		) {
-			const courseTopicsArray = courseTopics.split(",").map((topic) => topic.trim());
-            const newCourse = new CoursesClass(
-                courseName.trim(),
-                courseDuration.trim(),
-                coursType.trim(),
-                courseTrack.trim(),
-                courseTopicsArray
-            );
-            this.props.transferData("course", newCourse);
-            this.setState({ notValideForm: false, addedSuccessfully: true });
+			const courseTopicsArray = courseTopics
+				.split(",")
+				.map((topic) => topic.trim());
+			const newCourse = new CoursesClass(
+				courseName.trim(),
+				courseDuration.trim(),
+				coursType.trim(),
+				courseTrack.trim(),
+				courseTopicsArray
+			);
+			this.props.transferData("course", newCourse);
+			this.setState({ notValideForm: false, addedSuccessfully: true });
 
 			// Clear inputs
 			this.setState({
@@ -142,8 +171,10 @@ class CourseForm extends React.Component {
 					/>
 					<label htmlFor="courseName">Enter Name</label>
 					{courseNameError && (
-						<span className="text-danger ps-1">
-							<b className="mt-2 bg-danger text-white d-inline-block">!</b>{" "}
+						<span className="text-danger ps-1 d-flex align-items-center">
+							<b className="mt-2 bg-danger text-white d-inline-block">
+								!
+							</b>{" "}
 							Invalid course name
 						</span>
 					)}
@@ -163,7 +194,9 @@ class CourseForm extends React.Component {
 					<label htmlFor="courseDuration">Enter Duration</label>
 					{courseDurationError && (
 						<span className="text-danger ps-1">
-							<b className="mt-2 bg-danger text-white d-inline-block">!</b>{" "}
+							<b className="mt-2 bg-danger text-white d-inline-block">
+								!
+							</b>{" "}
 							Invalid course duration
 						</span>
 					)}
@@ -183,7 +216,9 @@ class CourseForm extends React.Component {
 					<label htmlFor="courseTopics">Enter course topics</label>
 					{courseTopicsError && (
 						<span className="text-danger ps-1">
-							<b className="mt-2 bg-danger text-white d-inline-block">!</b>{" "}
+							<b className="mt-2 bg-danger text-white d-inline-block">
+								!
+							</b>{" "}
 							Invalid structure [floow this: topic1, topic2]
 						</span>
 					)}
@@ -196,14 +231,18 @@ class CourseForm extends React.Component {
 						id="coursType"
 						placeholder="cours type"
 						value={coursType}
-						onChange={(e) => this.checkInput("coursType", e.target.value)}
+						onChange={(e) =>
+							this.checkInput("coursType", e.target.value)
+						}
 					/>
 					<label htmlFor="coursType">
 						Enter course type [online / offline]
 					</label>
 					{coursTypeError && (
 						<span className="text-danger ps-1">
-							<b className="mt-2 bg-danger text-white d-inline-block">!</b>{" "}
+							<b className="mt-2 bg-danger text-white d-inline-block">
+								!
+							</b>{" "}
 							Invalid course type
 						</span>
 					)}
@@ -223,7 +262,9 @@ class CourseForm extends React.Component {
 					<label htmlFor="courseTrack">Enter course track</label>
 					{courseTrackError && (
 						<span className="text-danger ps-1">
-							<b className="mt-2 bg-danger text-white d-inline-block">!</b>{" "}
+							<b className="mt-2 bg-danger text-white d-inline-block">
+								!
+							</b>{" "}
 							Invalid track
 						</span>
 					)}
@@ -233,7 +274,23 @@ class CourseForm extends React.Component {
 					className="btn btn-outline-success d-block m-auto p-2 px-3 mt-5"
 					onClick={() => this.handleForm()}
 				>
-					Add new Course
+					<svg
+						width="16"
+						height="16"
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						className="me-2"
+					>
+						<path
+							d="M12 5V19M5 12H19"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						/>
+					</svg>
+					Add New Course
 				</button>
 				{this.state.addedSuccessfully && this.showAddedMsg()}
 			</>

@@ -9,13 +9,16 @@ import { CoursesClass } from "./components/CoursesClass";
 import AppCourse from "./pages/AppCourse";
 import EditItem from "./pages/EditItem";
 import Footer from "./includes/Footer";
+import LandingPage from "./pages/LandingPage";
 
 class AppRouter extends React.Component {
 	constructor() {
 		super();
 		this.state = {
 			// Load instructor and course data from localStorage or initialize with default data
-			InstructorsData: JSON.parse(localStorage.getItem("instructorData")) || [
+			InstructorsData: JSON.parse(
+				localStorage.getItem("instructorData")
+			) || [
 				new InstructorClass(
 					"Ahmed Maher",
 					"ahmedmaher@gmail.com",
@@ -103,9 +106,9 @@ class AppRouter extends React.Component {
 					"Frontend Development"
 				),
 			],
-			editedItem: null,          // Track item being edited
-			editedItemType: null,      // Type of item being edited (course or instructor)
-			editMode: false,           // Track if edit mode is enabled
+			editedItem: null, // Track item being edited
+			editedItemType: null, // Type of item being edited (course or instructor)
+			editMode: false, // Track if edit mode is enabled
 		};
 	}
 
@@ -115,7 +118,10 @@ class AppRouter extends React.Component {
 			"instructorData",
 			JSON.stringify(this.state.InstructorsData)
 		);
-		localStorage.setItem("courseData", JSON.stringify(this.state.CoursesData));
+		localStorage.setItem(
+			"courseData",
+			JSON.stringify(this.state.CoursesData)
+		);
 	}
 
 	// Update localStorage when state changes
@@ -124,18 +130,25 @@ class AppRouter extends React.Component {
 			"instructorData",
 			JSON.stringify(this.state.InstructorsData)
 		);
-		localStorage.setItem("courseData", JSON.stringify(this.state.CoursesData));
+		localStorage.setItem(
+			"courseData",
+			JSON.stringify(this.state.CoursesData)
+		);
 	}
 
 	// Function to handle adding new instructors or courses
 	transferData = (type, newElement) => {
 		if (type === "course") {
-			this.setState({ CoursesData: [...this.state.CoursesData, newElement] });
+			this.setState({
+				CoursesData: [...this.state.CoursesData, newElement],
+			});
 		} else {
-			this.setState({ InstructorsData: [...this.state.InstructorsData, newElement] });
+			this.setState({
+				InstructorsData: [...this.state.InstructorsData, newElement],
+			});
 		}
 		this.setState({ editMode: false });
-	}
+	};
 
 	// Function to delete items (instructor or course) by index
 	deleteItem = (dataType, eleIndex) => {
@@ -144,22 +157,28 @@ class AppRouter extends React.Component {
 			newData = this.state.CoursesData.filter((_, i) => i !== eleIndex);
 			this.setState({ CoursesData: newData });
 		} else {
-			newData = this.state.InstructorsData.filter((_, i) => i !== eleIndex);
+			newData = this.state.InstructorsData.filter(
+				(_, i) => i !== eleIndex
+			);
 			this.setState({ InstructorsData: newData });
 		}
-		localStorage.setItem(dataType === "course" ? 'courseData' : 'instructorData', JSON.stringify(newData));
-	}
-
+		localStorage.setItem(
+			dataType === "course" ? "courseData" : "instructorData",
+			JSON.stringify(newData)
+		);
+	};
 
 	render() {
 		return (
-			<div className="AppRouter" style={{minHeight: "100svh"}}>
+			<div className="AppRouter" style={{ minHeight: "100svh" }}>
 				<Navbar />
 
-				{/* Route for instructors page with delete and edit item functionality */}
+				{/* Route for landing page */}
 				<Routes>
+					<Route path="/" element={<LandingPage />} />
+					{/* Route for instructors page with delete and edit item functionality */}
 					<Route
-						path="/"
+						path="/instructors"
 						element={
 							<AppInstructors
 								deleteItem={this.deleteItem}

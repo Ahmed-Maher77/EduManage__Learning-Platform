@@ -20,19 +20,18 @@
   color: rgb(21, 137, 195);
   font-weight: 600;
 }
-
-.Dashboard-Page .choices .row div {
-  height: 200px;
-}
 .Dashboard-Page label {
   color: #616161;
 }
 .Dashboard-Page label + span b {
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   border-radius: 50%;
   text-align: center;
-  line-height: 20px;
+  line-height: 23px;
+  padding: 0;
+  font-size: 0.8rem;
+  margin-top: 0 !important;
 }
 
 .Edit-Page .container a {
@@ -50,4 +49,18 @@
 }
 .full-m-h {
   min-height: calc(100vh - (62px + 80px)) !important
+}
+
+.table-responsive {
+  th, td {
+    text-align: center;
+  }
+}
+
+button[title="Delete Item"] {
+  margin-top: 0;
+}
+
+.container-fluid {
+  padding-inline: 20px;
 }
