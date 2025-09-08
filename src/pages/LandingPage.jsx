@@ -6,17 +6,17 @@ class LandingPage extends React.Component {
 		return (
 			<div className="landing-page">
 				{/* Hero Section */}
-				<section className="hero-section">
-					{/* Floating Elements */}
-					<div className="floating-element"></div>
-					<div className="floating-element"></div>
-					<div className="floating-element"></div>
+				<section className="hero-section" aria-labelledby="hero-title">
+					{/* Floating Elements - decorative only */}
+					<div className="floating-element" aria-hidden="true"></div>
+					<div className="floating-element" aria-hidden="true"></div>
+					<div className="floating-element" aria-hidden="true"></div>
 
 					<div className="container">
 						<div className="row align-items-center min-vh-100">
 							<div className="col-lg-6">
 								<div className="hero-content py-3 pt-4">
-									<h1 className="hero-title">
+									<h1 id="hero-title" className="hero-title">
 										Manage Learning with{" "}
 										<span className="text-primary">
 											EduManage
@@ -31,6 +31,7 @@ class LandingPage extends React.Component {
 										<Link
 											to="/dashboard"
 											className="btn btn-primary btn-lg me-3 rounded"
+											aria-label="Get started with EduManage dashboard"
 										>
 											<svg
 												width="20"
@@ -39,6 +40,7 @@ class LandingPage extends React.Component {
 												fill="none"
 												xmlns="http://www.w3.org/2000/svg"
 												className="me-2"
+												aria-hidden="true"
 											>
 												<path
 													d="M12 5V19M5 12H19"
@@ -248,11 +250,17 @@ class LandingPage extends React.Component {
 				</section>
 
 				{/* Features Section */}
-				<section className="features-section py-5">
+				<section
+					className="features-section py-5"
+					aria-labelledby="features-title"
+				>
 					<div className="container">
 						<div className="row">
 							<div className="col-12 text-center mb-5">
-								<h2 className="section-title">
+								<h2
+									id="features-title"
+									className="section-title"
+								>
 									Why EduManage?
 								</h2>
 								<p className="section-subtitle">
@@ -261,15 +269,19 @@ class LandingPage extends React.Component {
 								</p>
 							</div>
 						</div>
-						<div className="row g-4">
-							<div className="col-lg-4 col-md-6">
+						<div className="row g-4" role="list">
+							<div className="col-lg-4 col-md-6" role="listitem">
 								<div className="feature-card">
-									<div className="feature-icon">
+									<div
+										className="feature-icon"
+										aria-hidden="true"
+									>
 										<svg
 											width="30"
 											height="30"
 											viewBox="0 0 24 24"
 											fill="none"
+											aria-hidden="true"
 										>
 											<path
 												d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"

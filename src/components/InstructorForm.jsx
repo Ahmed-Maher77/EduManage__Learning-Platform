@@ -139,9 +139,13 @@ class InstructorForm extends React.Component {
 	// Shows a success message when an instructor is added
 	showAddedMsg = () => {
 		return (
-			<span className="bg-success text-white p-2 rounded d-block mt-3">
+			<div
+				className="bg-success text-white p-2 rounded d-block mt-3"
+				role="alert"
+				aria-live="polite"
+			>
 				Instructor is added successfully
-			</span>
+			</div>
 		);
 	};
 
@@ -178,124 +182,206 @@ class InstructorForm extends React.Component {
 				<div className="mb-3 form-floating">
 					<input
 						type="text"
-						className="form-control"
+						className={`form-control ${
+							nameError ? "is-invalid" : ""
+						}`}
 						id="name"
 						placeholder="name"
 						value={userName}
 						onChange={(e) =>
 							this.checkInput("userName", e.target.value)
 						}
+						aria-describedby={nameError ? "name-error" : undefined}
+						aria-invalid={nameError}
+						required
 					/>
-					<label htmlFor="name">Enter Name</label>
+					<label
+						htmlFor="name"
+						className={nameError ? "required" : ""}
+					>
+						Enter Name
+					</label>
 					{nameError && (
-						<span className="text-danger ps-1">
+						<div
+							id="name-error"
+							className="invalid-feedback"
+							role="alert"
+						>
 							<b className="mt-2 bg-danger text-white d-inline-block">
 								!
 							</b>{" "}
 							Invalid username
-						</span>
+						</div>
 					)}
 				</div>
 				{/* Email input */}
 				<div className="mb-3 form-floating">
 					<input
-						type="text"
-						className="form-control"
+						type="email"
+						className={`form-control ${
+							emailError ? "is-invalid" : ""
+						}`}
 						id="email"
 						placeholder="name@example.com"
 						value={userEmail}
 						onChange={(e) =>
 							this.checkInput("userEmail", e.target.value)
 						}
+						aria-describedby={
+							emailError ? "email-error" : undefined
+						}
+						aria-invalid={emailError}
+						required
 					/>
-					<label htmlFor="email">Enter Email</label>
+					<label
+						htmlFor="email"
+						className={emailError ? "required" : ""}
+					>
+						Enter Email
+					</label>
 					{emailError && (
-						<span className="text-danger ps-1">
+						<div
+							id="email-error"
+							className="invalid-feedback"
+							role="alert"
+						>
 							<b className="mt-2 bg-danger text-white d-inline-block">
 								!
 							</b>{" "}
 							Invalid email
-						</span>
+						</div>
 					)}
 				</div>
 				{/* Address input */}
 				<div className="mb-3 form-floating">
 					<input
 						type="text"
-						className="form-control"
+						className={`form-control ${
+							addressError ? "is-invalid" : ""
+						}`}
 						id="address"
 						placeholder="address"
 						value={userAddress}
 						onChange={(e) =>
 							this.checkInput("userAddress", e.target.value)
 						}
+						aria-describedby={
+							addressError ? "address-error" : undefined
+						}
+						aria-invalid={addressError}
+						required
 					/>
-					<label htmlFor="address">Enter Physical Address</label>
+					<label
+						htmlFor="address"
+						className={addressError ? "required" : ""}
+					>
+						Enter Physical Address
+					</label>
 					{addressError && (
-						<span className="text-danger ps-1">
+						<div
+							id="address-error"
+							className="invalid-feedback"
+							role="alert"
+						>
 							<b className="mt-2 bg-danger text-white d-inline-block">
 								!
 							</b>{" "}
 							Invalid address
-						</span>
+						</div>
 					)}
 				</div>
 				{/* Track input */}
 				<div className="mb-3 form-floating">
 					<input
 						type="text"
-						className="form-control"
+						className={`form-control ${
+							trackError ? "is-invalid" : ""
+						}`}
 						id="track"
 						placeholder="track"
 						value={userTrack}
 						onChange={(e) =>
 							this.checkInput("userTrack", e.target.value)
 						}
+						aria-describedby={
+							trackError ? "track-error" : undefined
+						}
+						aria-invalid={trackError}
+						required
 					/>
-					<label htmlFor="track">Enter Track</label>
+					<label
+						htmlFor="track"
+						className={trackError ? "required" : ""}
+					>
+						Enter Track
+					</label>
 					{trackError && (
-						<span className="text-danger ps-1">
+						<div
+							id="track-error"
+							className="invalid-feedback"
+							role="alert"
+						>
 							<b className="mt-2 bg-danger text-white d-inline-block">
 								!
 							</b>{" "}
 							Invalid track name
-						</span>
+						</div>
 					)}
 				</div>
 				{/* Course list input */}
 				<div className="mb-3 form-floating">
 					<input
 						type="text"
-						className="form-control"
+						className={`form-control ${
+							courseError ? "is-invalid" : ""
+						}`}
 						id="courseList"
 						placeholder="courseList"
 						value={userCourseList}
 						onChange={(e) =>
 							this.checkInput("userCourseList", e.target.value)
 						}
+						aria-describedby={
+							courseError ? "course-error" : undefined
+						}
+						aria-invalid={courseError}
+						required
 					/>
-					<label htmlFor="courseList">
+					<label
+						htmlFor="courseList"
+						className={courseError ? "required" : ""}
+					>
 						Enter Course List [ex: html, css, ..]
 					</label>
 					{courseError && (
-						<span className="text-danger ps-1">
+						<div
+							id="course-error"
+							className="invalid-feedback"
+							role="alert"
+						>
 							<b className="mt-2 bg-danger text-white d-inline-block">
 								!
 							</b>{" "}
 							Invalid list structure
-						</span>
+						</div>
 					)}
 				</div>
 				{/* Error message if form is invalid */}
 				{this.props.notValideForm && (
-					<span className="bg-danger text-white d-block p-1 px-2 rounded">
+					<div
+						className="bg-danger text-white d-block p-1 px-2 rounded"
+						role="alert"
+						aria-live="polite"
+					>
 						Ensure to fill all inputs with a valid data
-					</span>
+					</div>
 				)}
 				{/* Submit button */}
 				<button
 					className="btn btn-outline-success d-block m-auto p-2 px-3 mt-5"
 					onClick={() => this.handleForm()}
+					type="button"
+					aria-label="Add new instructor to the system"
 				>
 					<svg
 						width="16"
@@ -304,6 +390,7 @@ class InstructorForm extends React.Component {
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
 						className="me-2"
+						aria-hidden="true"
 					>
 						<path
 							d="M12 5V19M5 12H19"

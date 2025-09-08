@@ -1,21 +1,54 @@
 import React from "react";
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import AppInstructors from "./pages/AppInstructors";
+import { Route, Routes, useLocation } from "react-router-dom";
+
+// Component imports
 import Navbar from "./includes/Navbar";
+import Footer from "./includes/Footer";
+import Loader from "./components/Loader";
+
+// Page imports
+import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
-import { InstructorClass } from "./components/InstructorClass";
-import { CoursesClass } from "./components/CoursesClass";
+import AppInstructors from "./pages/AppInstructors";
 import AppCourse from "./pages/AppCourse";
 import EditItem from "./pages/EditItem";
-import Footer from "./includes/Footer";
-import LandingPage from "./pages/LandingPage";
+
+// Data model imports
+import { InstructorClass } from "./components/InstructorClass";
+import { CoursesClass } from "./components/CoursesClass";
+
+// Styles
+import "./App.css";
+
+// ScrollToTop component to handle route changes
+const ScrollToTop = () => {
+	const { pathname } = useLocation();
+
+	React.useEffect(() => {
+		// Check if user prefers reduced motion (with fallback for older browsers)
+		const prefersReducedMotion =
+			window.matchMedia &&
+			window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+		// Scroll to top when route changes
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: prefersReducedMotion ? "auto" : "smooth",
+		});
+	}, [pathname]);
+
+	return null;
+};
 
 class AppRouter extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			// Load instructor and course data from localStorage or initialize with default data
+			// UI state
+			isLoading: true, // Controls initial loader display
+
+			// Data state - load from localStorage or use defaults
 			InstructorsData: JSON.parse(
 				localStorage.getItem("instructorData")
 			) || [
@@ -106,14 +139,17 @@ class AppRouter extends React.Component {
 					"Frontend Development"
 				),
 			],
-			editedItem: null, // Track item being edited
-			editedItemType: null, // Type of item being edited (course or instructor)
-			editMode: false, // Track if edit mode is enabled
+
+			// Edit state management
+			editedItem: null, // Currently edited item
+			editedItemType: null, // Type: 'course' or 'instructor'
+			editMode: false, // Whether edit mode is active
 		};
 	}
 
-	// Save data to localStorage on mount
+	// Initialize app data and show loader
 	componentDidMount() {
+		// Persist initial data to localStorage
 		localStorage.setItem(
 			"instructorData",
 			JSON.stringify(this.state.InstructorsData)
@@ -122,9 +158,14 @@ class AppRouter extends React.Component {
 			"courseData",
 			JSON.stringify(this.state.CoursesData)
 		);
+
+		// Hide loader after 2 seconds
+		setTimeout(() => {
+			this.setState({ isLoading: false });
+		}, 2000);
 	}
 
-	// Update localStorage when state changes
+	// Sync data changes to localStorage
 	componentDidUpdate() {
 		localStorage.setItem(
 			"instructorData",
@@ -136,7 +177,7 @@ class AppRouter extends React.Component {
 		);
 	}
 
-	// Function to handle adding new instructors or courses
+	// Add new instructor or course
 	transferData = (type, newElement) => {
 		if (type === "course") {
 			this.setState({
@@ -150,7 +191,7 @@ class AppRouter extends React.Component {
 		this.setState({ editMode: false });
 	};
 
-	// Function to delete items (instructor or course) by index
+	// Remove instructor or course by index
 	deleteItem = (dataType, eleIndex) => {
 		let newData;
 		if (dataType === "course") {
@@ -169,37 +210,59 @@ class AppRouter extends React.Component {
 	};
 
 	render() {
+		// Show loader during initial load
+		if (this.state.isLoading) {
+			return <Loader />;
+		}
+
 		return (
 			<div className="AppRouter" style={{ minHeight: "100svh" }}>
+				{/* Scroll to top on route change */}
+				<ScrollToTop />
+
+				{/* Navigation */}
 				<Navbar />
 
-				{/* Route for landing page */}
-				<Routes>
-					<Route path="/" element={<LandingPage />} />
-					{/* Route for instructors page with delete and edit item functionality */}
-					<Route
-						path="/instructors"
-						element={
-							<AppInstructors
-								deleteItem={this.deleteItem}
-								editItem={this.editItem}
-							/>
-						}
-					/>
-					{/* Route for dashboard where new data can be transferred */}
-					<Route
-						path="/dashboard"
-						element={<Dashboard transferData={this.transferData} />}
-					/>
-					{/* Route for editing a specific item */}
-					<Route path="/dashboard/edit/:id" element={<EditItem />} />
-					{/* Route for courses page with delete item functionality */}
-					<Route
-						path="/courses"
-						element={<AppCourse deleteItem={this.deleteItem} />}
-					/>
-				</Routes>
+				{/* Main content routes */}
+				<main id="main-content" role="main" aria-label="Main content">
+					<Routes>
+						{/* Landing page - default route */}
+						<Route path="/" element={<LandingPage />} />
 
+						{/* Instructors management */}
+						<Route
+							path="/instructors"
+							element={
+								<AppInstructors
+									deleteItem={this.deleteItem}
+									editItem={this.editItem}
+								/>
+							}
+						/>
+
+						{/* Dashboard for adding new items */}
+						<Route
+							path="/dashboard"
+							element={
+								<Dashboard transferData={this.transferData} />
+							}
+						/>
+
+						{/* Edit existing item */}
+						<Route
+							path="/dashboard/edit/:id"
+							element={<EditItem />}
+						/>
+
+						{/* Courses management */}
+						<Route
+							path="/courses"
+							element={<AppCourse deleteItem={this.deleteItem} />}
+						/>
+					</Routes>
+				</main>
+
+				{/* Footer */}
 				<Footer />
 			</div>
 		);
