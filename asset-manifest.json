@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/EduManage__Learning-Platform/static/css/main.9cf2b6ea.css",
+    "main.css": "/EduManage__Learning-Platform/static/css/main.9a1043e5.css",
     "main.js": "/EduManage__Learning-Platform/static/js/main.3f3fa42b.js",
     "index.html": "/EduManage__Learning-Platform/index.html",
-    "main.9cf2b6ea.css.map": "/EduManage__Learning-Platform/static/css/main.9cf2b6ea.css.map",
+    "main.9a1043e5.css.map": "/EduManage__Learning-Platform/static/css/main.9a1043e5.css.map",
     "main.3f3fa42b.js.map": "/EduManage__Learning-Platform/static/js/main.3f3fa42b.js.map"
   },
   "entrypoints": [
-    "static/css/main.9cf2b6ea.css",
+    "static/css/main.9a1043e5.css",
     "static/js/main.3f3fa42b.js"
   ]
 }
