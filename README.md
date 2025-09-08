@@ -23,6 +23,18 @@ A modern, accessible CRUD web application for managing instructors and courses. 
 
 ---
 
+## 🌐**Demo (Live Preview):** 
+
+👉 **Live Preview:** <a href="https://ahmed-maher77.github.io/EduManage__Learning-Platform/" target="_blank">https://ahmed-maher77.github.io/EduManage__Learning-Platform/</a>
+
+---
+
+## 🎥 **Demo Video:** 
+
+📹 **Watch Video on LinkedIn:** <a href="" target="_blank">coming soon</a>
+
+---
+
 ## ✨ Key Features
 
 -   **CRUD Operations**: Complete Create, Read, Update, Delete functionality for instructors and courses
@@ -34,6 +46,14 @@ A modern, accessible CRUD web application for managing instructors and courses. 
 -   **Auto-Scroll Navigation**: Smooth scroll to top on route changes with motion preference respect
 -   **Initial Loader**: Professional loading screen with animated spinner
 -   **Enhanced Forms**: Comprehensive validation with proper error messaging and accessibility
+
+---
+
+## 👀 Website Preview:
+
+<a href="https://ahmed-maher77.github.io/EduManage__Learning-Platform/" title="demo">
+  <img src="uploaded-img-on-github-readme" alt="website preview" width="400">
+</a>
 
 ---
 
@@ -66,6 +86,17 @@ The application will open at `http://localhost:3000`
 3. **Instructors**: Add, edit, and manage instructor profiles
 4. **Courses**: Create and organize course listings
 
-## 📄 License
+---
 
-This project is open source and available under the MIT License.
+## 📬 Contact & Contribution
+- 🧑‍💻 **Portfolio:** <a href="https://ahmedmaher-portfolio.vercel.app/" title="See My Portfolio">https://ahmedmaher-portfolio.vercel.app/</a>
+- 🔗 **LinkedIn:** <a href="https://www.linkedin.com/in/ahmed-maher-algohary" title="Contact via LinkedIn">https://www.linkedin.com/in/ahmed-maher-algohary</a>
+- 📧 **Email:** <a href="mailto:ahmedmaher.dev1@gmail.com" title="Contact via Email">ahmedmaher.dev1@gmail.com</a>
+
+> Contributions, suggestions, and bug reports are welcome. Feel free to open issues or pull requests.
+
+---
+
+## ⭐ Support
+
+If you found this project helpful or inspiring, please consider giving it a ⭐. Your support helps me grow and share more open-source projects like this!
