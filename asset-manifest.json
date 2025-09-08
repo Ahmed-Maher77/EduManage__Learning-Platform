@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/crud-web-app-using-reactjs-bootstrap-scss/static/css/main.1fb217ba.css",
-    "main.js": "/crud-web-app-using-reactjs-bootstrap-scss/static/js/main.f70ecd6d.js",
-    "index.html": "/crud-web-app-using-reactjs-bootstrap-scss/index.html",
-    "main.1fb217ba.css.map": "/crud-web-app-using-reactjs-bootstrap-scss/static/css/main.1fb217ba.css.map",
-    "main.f70ecd6d.js.map": "/crud-web-app-using-reactjs-bootstrap-scss/static/js/main.f70ecd6d.js.map"
+    "main.css": "/EduManage__Learning-Platform/static/css/main.9cf2b6ea.css",
+    "main.js": "/EduManage__Learning-Platform/static/js/main.3f3fa42b.js",
+    "index.html": "/EduManage__Learning-Platform/index.html",
+    "main.9cf2b6ea.css.map": "/EduManage__Learning-Platform/static/css/main.9cf2b6ea.css.map",
+    "main.3f3fa42b.js.map": "/EduManage__Learning-Platform/static/js/main.3f3fa42b.js.map"
   },
   "entrypoints": [
-    "static/css/main.1fb217ba.css",
-    "static/js/main.f70ecd6d.js"
+    "static/css/main.9cf2b6ea.css",
+    "static/js/main.3f3fa42b.js"
   ]
 }
