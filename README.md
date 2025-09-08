@@ -56,7 +56,7 @@ A learning management web application with full CRUD functionality to manage ins
 ## 👀 Website Preview:
 
 <a href="https://ahmed-maher77.github.io/EduManage__Learning-Platform/" title="demo">
-  <img src="uploaded-img-on-github-readme" alt="website preview" width="400">
+  <img src="https://github.com/user-attachments/assets/0904029a-f189-4b03-b7d8-c0e3089577e9" alt="website preview - UI Mockup" width="400">
 </a>
 
 ---
@@ -69,7 +69,7 @@ A learning management web application with full CRUD functionality to manage ins
 -   npm or yarn
 
 # Clone the repository
-git clone https://github.com/yourusername/EduManage__Learning-Platform.git
+git clone https://github.com/Ahmed-Maher77/EduManage__Learning-Platform.git
 cd EduManage__Learning-Platform
 
 # Install dependencies
