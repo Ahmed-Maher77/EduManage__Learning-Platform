@@ -6,24 +6,24 @@ A learning management web application with full CRUD functionality to manage ins
 
 ## 💻 Technologies  
 
-- **Frontend**  
+- **📱 Frontend**  
   - **React.js** → Builds dynamic, component-based UIs with efficient rendering.  
   - **JavaScript (ES6+)** → Powers application logic with modern, clean, and modular code.  
 
-- **Styling**  
+- **🎨 Styling**  
   - **SCSS** → Provides maintainable, reusable, and scalable styling with variables and nesting.  
   - **Bootstrap** → Ensures responsive layouts and prebuilt UI components for faster development.  
 
-- **Routing**  
+- **✈️ Routing**  
   - **React Router v6** → Handles client-side navigation in SPAs.  
 
-- **Build Tools**  
+- **🛠️ Build Tools**  
   - **Create React App** → Zero-config React setup with build tools.  
   - **Node.js** → Runtime environment and dependency management.
 
 -  **⚙️ Deployment & Assets**
-- **gh-pages** → Simplifies deployment of the app to GitHub Pages.  
-- **SVG** → Delivers crisp, scalable icons and animated shapes with lightweight performance.
+  - **gh-pages** → Simplifies deployment of the app to GitHub Pages.  
+  - **SVG** → Delivers crisp, scalable icons and animated shapes with lightweight performance.
 
 ---
 
