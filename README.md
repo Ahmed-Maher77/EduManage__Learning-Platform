@@ -21,8 +21,8 @@ A learning management web application with full CRUD functionality to manage ins
   - **Create React App** → Zero-config React setup with build tools.  
   - **Node.js** → Runtime environment and dependency management.
 
--  **⚙️ Deployment & Assets**
-  - **gh-pages** → Simplifies deployment of the app to GitHub Pages.  
+- **⚙️ Deployment & Assets**
+  - **gh-pages** → Simplifies deployment of the app to GitHub Pages.
   - **SVG** → Delivers crisp, scalable icons and animated shapes with lightweight performance.
 
 ---
