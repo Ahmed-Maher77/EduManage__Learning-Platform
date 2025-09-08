@@ -7,12 +7,12 @@ A learning management web application with full CRUD functionality to manage ins
 ## 💻 Technologies  
 
 - **Frontend**  
-  - **React.js**: Builds dynamic, component-based UIs.  
-  - **JavaScript (ES6+)**: Modern syntax for clean, efficient code.  
+  - **React.js**: Builds dynamic, component-based UIs with efficient rendering.  
+  - **JavaScript (ES6+)**: Powers application logic with modern, clean, and modular code.  
 
 - **Styling**  
-  - **SCSS**: Scalable and maintainable CSS with variables and nesting.  
-  - **Bootstrap 5.3.3**: Responsive framework with prebuilt UI components.  
+  - **SCSS**: Provides maintainable, reusable, and scalable styling with variables and nesting.  
+  - **Bootstrap** → Ensures responsive layouts and prebuilt UI components for faster development.  
 
 - **Routing**  
   - **React Router v6**: Handles client-side navigation in SPAs.  
