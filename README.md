@@ -1,6 +1,6 @@
 # EduManage - Learning Management Platform
 
-A modern, accessible CRUD web application for managing instructors and courses. Built with React.js, Bootstrap, and SCSS, featuring a professional landing page, comprehensive accessibility features, and smooth user experience.
+A learning management web application with full CRUD functionality to manage instructors and courses, featuring a responsive and accessible interface, modern UI design, smooth user experience, and persistent data storage for seamless management.
 
 ---
 
